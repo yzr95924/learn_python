@@ -195,3 +195,5 @@ cython_debug/
 
 tmp/*
 .vscode
+pkg
+bin
