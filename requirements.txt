@@ -2,3 +2,4 @@ minio
 pyarrow
 pyiceberg
 pymilvus
+pandas
