@@ -1,0 +1,5 @@
+catalog:
+    local_rest_catalog:
+      type: rest
+      uri: http://127.0.0.1:8181
+      header.content-type: application/vnd.api+json
