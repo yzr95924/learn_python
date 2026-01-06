@@ -17,9 +17,7 @@ from pyiceberg.types import (
 from pyiceberg.partitioning import PartitionSpec, PartitionField
 from pyiceberg.table.sorting import SortOrder, SortField
 from pyiceberg.exceptions import NamespaceAlreadyExistsError, TableAlreadyExistsError
-
 import pyarrow as pa
-
 
 G_TEST_PARQUET_PATH = "./tmp/test.parquet"
 G_NAMESPACE_NAME = "yzr"
@@ -146,5 +144,7 @@ if __name__ == "__main__":
     g_test_table.update_schema().add_column(
         path="new_col", field_type=StringType(), required=False
     ).commit()
-    g_local_catalog.purge_table(G_TABLE_IDENTIFIER)
-    g_local_catalog.drop_namespace(G_NAMESPACE_NAME)
+
+    print(g_test_table.last_sequence_number)
+    # g_local_catalog.purge_table(G_TABLE_IDENTIFIER)
+    # g_local_catalog.drop_namespace(G_NAMESPACE_NAME)
